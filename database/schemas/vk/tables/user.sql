@@ -14,3 +14,5 @@ ENGINE=InnoDB DEFAULT
 CHARSET=utf8mb4
 COLLATE=utf8mb4_unicode_ci
 COMMENT='Комментарий таблицы';
+
+alter table vk.user add column content_id int unsigned not null references vk.content(id);

@@ -14,3 +14,5 @@ CREATE TABLE vk.media (
     CONSTRAINT fk_media_user1 FOREIGN KEY (user_id) REFERENCES vk.user (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 COMMENT='Медиа файлы';
+
+alter table vk.media add column content_id int unsigned not null references vk.content(id);

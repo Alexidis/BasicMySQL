@@ -18,3 +18,5 @@ CREATE TABLE vk.post (
     CONSTRAINT fk_post_user1 FOREIGN KEY (user_id) REFERENCES vk.user (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 COMMENT='Публикация';
+
+alter table vk.post add column content_id int unsigned not null references vk.content(id);

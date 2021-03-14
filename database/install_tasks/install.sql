@@ -124,8 +124,34 @@ CREATE TABLE vk.post (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 COMMENT='Публикация';
 
+CREATE TABLE vk.content_type (
+    id smallint unsigned NOT NULL AUTO_INCREMENT,
+    name varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+COMMENT='Типы контента';
 
+CREATE TABLE vk.content (
+    id int unsigned NOT NULL AUTO_INCREMENT,
+    content_type_id smallint unsigned not null,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_content_type FOREIGN KEY (content_type_id) REFERENCES vk.content_type (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+COMMENT='Контент';
 
+CREATE TABLE vk.user_like (
+    user_id int unsigned NOT NULL,
+    content_id int unsigned not null,
+    created_at datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (user_id, content_id),
+    CONSTRAINT fk_user_like_user FOREIGN KEY (user_id) REFERENCES vk.user (id),
+    CONSTRAINT fk_user_like_content FOREIGN KEY (content_id) REFERENCES vk.content (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+COMMENT='Лайки пользователей';
+
+alter table vk.user add column content_id int unsigned not null references vk.content(id);
+alter table vk.media add column content_id int unsigned not null references vk.content(id);
+alter table vk.post add column content_id int unsigned not null references vk.content(id);
 
 
 
