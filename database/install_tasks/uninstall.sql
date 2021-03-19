@@ -1,15 +1,12 @@
-DROP TABLE vk.user_like;
-DROP TABLE vk.content;
-DROP TABLE vk.content_type;
-DROP TABLE vk.post;
-DROP TABLE vk.media;
-DROP TABLE vk.media_type;
-DROP TABLE vk.user_community;
-DROP TABLE vk.community;
-DROP TABLE vk.message;
-DROP TABLE vk.friend_request;
-DROP TABLE vk.profile;
-DROP TABLE vk.user;
-drop schema vk;
-
-
+truncate vk.`user_like`;
+truncate vk.`post`;
+truncate vk.`message`;
+truncate vk.`friend_request`;
+truncate vk.`user_community`;
+truncate vk.`profile`;
+DELETE FROM vk.`content`;
+DELETE FROM vk.`content_type`;
+DELETE FROM vk.`media`;
+DELETE FROM vk.`media_type`;
+DELETE FROM vk.`community`;
+DELETE FROM vk.`user`;
