@@ -1,0 +1,17 @@
+insert into vk.media (id, media_type_id, user_id, url, data, metadata, created_at, content_id)
+values  (1, 1, 1, 'video/vnd.fvt', null, null, '2021-12-14 16:22:51', 3),
+        (2, 1, 2, 'application/x-tar', null, null, '2021-06-08 12:41:55', 6),
+        (3, 3, 3, 'image/vnd.xiff', null, null, '2021-12-08 05:00:01', 9),
+        (4, 1, 4, 'application/xml-dtd', null, null, '2021-04-14 09:00:04', 12),
+        (5, 1, 5, 'application/vnd.umajin', null, null, '2021-03-22 12:51:08', 15),
+        (6, 1, 6, 'audio/xm', null, null, '2021-06-10 08:28:38', 18),
+        (7, 2, 7, 'application/vnd.mseq', null, null, '2021-06-03 05:58:19', 21),
+        (8, 1, 8, 'application/x-wais-source', null, null, '2021-08-05 14:54:18', 24),
+        (9, 1, 9, 'application/x-texinfo', null, null, '2021-12-09 08:42:53', 27),
+        (10, 3, 10, 'application/vnd.flographit', null, null, '2021-01-25 12:13:41', 30),
+        (11, 1, 11, 'application/vnd.lotus-organizer', null, null, '2021-07-18 20:51:52', 33),
+        (12, 2, 12, 'application/xaml+xml', null, null, '2021-10-30 19:15:20', 36),
+        (13, 3, 13, 'audio/vnd.rip', null, null, '2021-05-13 07:24:43', 39),
+        (14, 2, 14, 'application/vnd.semf', null, null, '2021-02-24 11:39:13', 42),
+        (15, 1, 15, 'video/h264', null, null, '2021-02-05 08:09:00', 45),
+        (16, 2, 16, 'application/vnd.sun.xml.impress', null, null, '2021-10-01 13:10:02', 48);
